@@ -27,7 +27,7 @@ replace (
 	k8s.io/apimachinery => k8s.io/apimachinery v0.0.0-20191004115801-a2eda9f80ab8
 	k8s.io/apiserver => k8s.io/apiserver v0.0.0-20191016112112-5190913f932d
 	k8s.io/cli-runtime => k8s.io/cli-runtime v0.0.0-20191016114015-74ad18325ed5
-	k8s.io/client-go => k8s.io/client-go v0.0.0-20191016111102-bec269661e48
+	// k8s.io/client-go => k8s.io/client-go v0.0.0-20191016111102-bec269661e48
 	k8s.io/cloud-provider => k8s.io/cloud-provider v0.0.0-20191016115326-20453efc2458
 	k8s.io/cluster-bootstrap => k8s.io/cluster-bootstrap v0.0.0-20191016115129-c07a134afb42
 	k8s.io/code-generator => k8s.io/code-generator v0.0.0-20191004115455-8e001e5d1894
@@ -48,3 +48,10 @@ replace (
 replace github.com/docker/docker => github.com/moby/moby v0.7.3-0.20190826074503-38ab9da00309 // Required by Helm
 
 replace github.com/openshift/api => github.com/openshift/api v0.0.0-20190924102528-32369d4db2ad // Required until https://github.com/operator-framework/operator-lifecycle-manager/pull/1241 is resolved
+
+replace sigs.k8s.io/controller-runtime => ./staging/src/sigs.k8s.io/controller-runtime@v0.4.0
+replace k8s.io/client-go => ./staging/src/k8s.io/client-go@v0.0.0-20190918160344-1fbdaa4c8d90
+
+require github.com/xlab-uiuc/sonar-runtime v0.0.0-00010101000000-000000000000
+
+replace github.com/xlab-uiuc/sonar-runtime => ./staging/src/github.com/xlab-uiuc/sonar-runtime

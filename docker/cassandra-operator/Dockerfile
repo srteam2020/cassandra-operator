@@ -14,7 +14,7 @@ WORKDIR /code
 COPY go.mod go.sum ./
 
 # Fetch Go modules in a separate layer for better caching
-RUN go mod download
+# RUN go mod download
 
 COPY . ./
 
@@ -29,6 +29,9 @@ FROM alpine:3.11.2
 
 COPY --from=builder /tmp/cassandra-operator .
 COPY --from=builder /etc/passwd /etc/passwd
-USER 999
+RUN apk update
+RUN apk upgrade
+RUN apk add bash
+# USER 999
 RUN mkdir -p /tmp
-CMD ["./cassandra-operator"]
+CMD ["sleep", "infinity"]
